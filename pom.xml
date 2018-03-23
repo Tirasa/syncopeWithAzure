@@ -35,7 +35,7 @@ under the License.
     <rat.skip>true</rat.skip>
     <checkstyle.skip>true</checkstyle.skip>
     
-    <connid.azure.version>1.0.0-SNAPSHOT</connid.azure.version>
+    <connid.azure.version>1.0.0</connid.azure.version>
   </properties>
 
   <name>Apache Syncope - Azure ConnId bundle sample project</name>
