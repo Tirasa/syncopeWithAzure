@@ -22,11 +22,11 @@ under the License.
   <parent>
     <groupId>org.apache.syncope</groupId>
     <artifactId>syncope</artifactId>
-    <version xmlns="">2.0.8</version>
+    <version xmlns="">2.0.9-SNAPSHOT</version>
   </parent>
 
   <properties>
-    <syncope.version xmlns="">2.0.8</syncope.version>
+    <syncope.version xmlns="">2.0.9-SNAPSHOT</syncope.version>
     <secretKey>xcfgfsdfa</secretKey>
     <anonymousKey>xvsdf</anonymousKey>
     <jwsKey>xcvsdfaf</jwsKey>
@@ -35,7 +35,7 @@ under the License.
     <rat.skip>true</rat.skip>
     <checkstyle.skip>true</checkstyle.skip>
     
-    <connid.azure.version>1.0.0</connid.azure.version>
+    <connid.azure.version>1.0.1-SNAPSHOT</connid.azure.version>
   </properties>
 
   <name>Apache Syncope - Azure ConnId bundle sample project</name>
@@ -104,68 +104,6 @@ under the License.
         </executions>
       </plugin>      
     </plugins>
-    
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId> 
-          <version>3.0.2</version>
-          <configuration>
-            <outputDirectory>${bundles.directory}</outputDirectory>
-            <useBaseVersion>true</useBaseVersion>
-            <artifactItems>
-              <artifactItem>
-                <groupId>net.tirasa.connid.bundles.soap</groupId>
-                <artifactId>net.tirasa.connid.bundles.soap</artifactId>
-                <version>${connid.soap.version}</version>
-              </artifactItem>
-              <artifactItem>
-                <groupId>net.tirasa.connid.bundles</groupId>
-                <artifactId>net.tirasa.connid.bundles.rest</artifactId>
-                <version>${connid.rest.version}</version>
-              </artifactItem>
-              <artifactItem>
-                <groupId>net.tirasa.connid.bundles</groupId>
-                <artifactId>net.tirasa.connid.bundles.csvdir</artifactId>
-                <version>${connid.csvdir.version}</version>
-              </artifactItem>
-              <artifactItem>
-                <groupId>net.tirasa.connid.bundles.db</groupId>
-                <artifactId>net.tirasa.connid.bundles.db.table</artifactId>
-                <version>${connid.database.version}</version>
-              </artifactItem>
-              <artifactItem>
-                <groupId>net.tirasa.connid.bundles.db</groupId>
-                <artifactId>net.tirasa.connid.bundles.db.scriptedsql</artifactId>
-                <version>${connid.database.version}</version>
-              </artifactItem>
-              <artifactItem>
-                <groupId>net.tirasa.connid.bundles</groupId>
-                <artifactId>net.tirasa.connid.bundles.ldap</artifactId>
-                <version>${connid.ldap.version}</version>
-              </artifactItem>
-              <artifactItem>
-                <groupId>net.tirasa.connid.bundles</groupId>
-                <artifactId>net.tirasa.connid.bundles.ad</artifactId>
-                <version>${connid.ad.version}</version>
-              </artifactItem>
-              <artifactItem>
-                <groupId>net.tirasa.connid.bundles</groupId>
-                <artifactId>net.tirasa.connid.bundles.googleapps</artifactId>
-                <version>${connid.googleapps.version}</version>
-              </artifactItem>
-              <artifactItem>
-                <groupId>net.tirasa.connid.bundles</groupId>
-                <artifactId>net.tirasa.connid.bundles.azure</artifactId>
-                <version>${connid.azure.version}</version>
-              </artifactItem>
-            </artifactItems>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-    
   </build>
     
   <modules>
@@ -174,5 +112,15 @@ under the License.
     <module>console</module>
     <module>enduser</module>
   </modules>
-    <description>Apache Syncope project, configured to work with the Azure ConnId bundle</description>
+  <description>Apache Syncope project, configured to work with the Azure ConnId bundle</description>
+  
+  <repositories>
+    <repository>
+      <id>apache.snapshots</id>
+      <url>https://repository.apache.org/content/repositories/snapshots/</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
 </project>
